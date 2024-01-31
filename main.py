@@ -20,9 +20,9 @@ def flatten_json(json_data, parent_key='', separator='_'):
     return items
 
 
-def make_api_request(matchId):
+def make_api_request(matchId,region):
     try:
-        response = lol_watcher.match.timeline_by_match("na1", matchId)
+        response = lol_watcher.match.timeline_by_match(region, matchId)
         return response
     except ApiError as err:
         if err.response.status_code == 429:
@@ -35,8 +35,8 @@ def make_api_request(matchId):
             return None
 
 
-def convertToCsv(matchId):
-    my_ranked_stats = make_api_request(matchId)
+def convertToCsv(matchId,region):
+    my_ranked_stats = make_api_request(matchId,region)
     if my_ranked_stats is not None:
         # Convert and write JSON object to file
 
@@ -73,9 +73,9 @@ def convertToCsv(matchId):
 
 
 
-lol_watcher = LolWatcher('RGAPI-f3aa5d33-195a-495c-8021-7114bf3cd042')
+lol_watcher = LolWatcher('developer key here from riot developer') # you ned you own developer key
 
-my_region = 'NA1'
+my_region = 'NA1' # region from the data is from
 
 #me = lol_watcher.summoner.by_name("na1", 'jamoon')
 #print(me)
@@ -106,7 +106,7 @@ try:
 
     for i in dfMatch["match_ids"]:
         print(i)
-        convertToCsv(i)
+        convertToCsv(i,region)
         time.sleep(2)
 
     # response = lol_watcher.match.timeline_by_match("la1", "LA1_1474062571")
