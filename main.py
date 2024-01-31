@@ -2,7 +2,6 @@ from datetime import datetime
 import json
 import time
 from collections.abc import Iterable
-
 import pandas as pd
 from riotwatcher import LolWatcher, ApiError
 
