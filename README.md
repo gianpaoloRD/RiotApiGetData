@@ -8,3 +8,7 @@ Easy Integration: Quickly integrate RiotApiGetData into your projects with its u
 Customizable Queries: Tailor your data requests to suit your specific needs. RiotApiGetData empowers users to craft customized queries, enabling them to retrieve targeted information such as player statistics, match histories, and more.
 
 Error Handling: Handle API errors gracefully with RiotApiGetData's robust error-handling mechanisms. The library provides informative feedback, making it easier to troubleshoot issues and maintain the reliability of your applications.
+
+Requeriments :
+
+install all the libraries
